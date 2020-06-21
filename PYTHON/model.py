@@ -6,12 +6,12 @@
 04.- Delete or replace var with a class_var
 05.- Delete or replace method_class with a method_class
 06.- Delete or replace value with value_principal
-07.- Delete or replace int with the main data type
+07.- Delete or replace int with the main data type (Complete words)
 08.- Delete or replace string with string_secondary (Match case)
 09.- Delete or replace str with secondary data type (Complete words)
 10.- Delete or replace private_method with method_name
 11.- Delete or replace public_method with method_name
-12.- Replace 01/01/2020 with date
+12.- Replace jan/01/2020 with date
 13.- Check all the class and delete this instructions
 
 """

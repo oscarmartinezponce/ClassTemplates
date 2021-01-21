@@ -7,11 +7,11 @@
 05.- Delete or replace method_class with a method_class
 06.- Delete or replace value with value_principal
 07.- Delete or replace int with the main data type (Complete words)
-08.- Delete or replace string with string_secondary (Match case)
-09.- Delete or replace str with secondary data type (Complete words)
+08.- Delete or replace secondary with val_secondary
+09.- Delete or replace float with secondary data type
 10.- Delete or replace private_method with method_name
 11.- Delete or replace public_method with method_name
-12.- Replace jan/01/2020 with date
+12.- Replace jan/01/2021 with date
 13.- Check all the class and delete this instructions
 
 """
@@ -24,16 +24,16 @@ from sqlite3 import Cursor
 
 __email__ = "oscar07112009@hotmail.com"
 __license__ = "GPL"
-__maintainer__ = "Oscar Martínez"
+__maintainer__ = "Oscar Martinez"
 __status__ = "Developing"
 
 __version__ = "1.0"
 
-__date__ = "jan/01/2020"
+__date__ = "jan/01/2021"
 
-__author__ = "Oscar Martínez"
+__author__ = "Oscar Martinez"
 
-__credits__ = "AvanZen"
+__credits__ = "AvantZen"
 
 
 class Model(Cursor):
@@ -41,7 +41,7 @@ class Model(Cursor):
 
     # ____________________________Class attributes_____________________________
 
-    _const = 1
+    _const = True
     var = 2
 
     # ____________________________Class attributes_____________________________
@@ -49,9 +49,10 @@ class Model(Cursor):
     # ______________________________Class methods______________________________
 
     @classmethod
-    def method_class(cls, var: int) -> int:
+    def method_class(cls, var: bool) -> bool:
         """Method description  (DocString)"""
-        return Model.var + var
+        Model.var = var
+        return Model.var
 
     # ______________________________Class methods______________________________
 
@@ -59,26 +60,26 @@ class Model(Cursor):
 
     # _____________________________Generic methods_____________________________
 
-    def __init__(self, value: int, string='string'):
+    def __init__(self, value: int, secondary: float = 0):
         """Method description  (DocString)"""
         super(Cursor, self).__init__()
         self.__value = value
-        self.__string = string
+        self.__secondary = secondary
 
     def __len__(self):
         """Method description  (DocString)
-        return len(self.__string)"""
-        return len(self.__string)
+        return len(self.__secondary)"""
+        return len(self.__secondary)
 
     def __str__(self):
         """Method description  (DocString)
-        return str(self.__string)"""
-        return str(self.__string)
+        return str(self.__secondary)"""
+        return str(self.__secondary)
 
     def __del__(self):
         """Method description  (DocString)
-        del self.__string"""
-        del self.__string
+        del self.__secondary"""
+        del self.__secondary
 
     # _____________________________Generic methods_____________________________
 
@@ -131,9 +132,9 @@ class Model(Cursor):
         return self.__value
 
     @property
-    def string(self) -> str:
+    def secondary(self) -> float:
         """Method description (DocString)"""
-        return self.__string
+        return self.__secondary
 
     # _________________________________Getters_________________________________
 
@@ -144,10 +145,10 @@ class Model(Cursor):
         """Method description (DocString)"""
         self.__value = value
 
-    @string.setter
-    def string(self, string: str):
+    @secondary.setter
+    def secondary(self, secondary: float):
         """Method description (DocString)"""
-        self.__string = string
+        self.__secondary = secondary
 
     # _________________________________Setters_________________________________
 
